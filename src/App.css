@@ -1,38 +1,81 @@
-.App {
+body {
+  background: #f2f2f2;
+  color: #757575;
+  margin: 0px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+h2 {
   text-align: center;
+  padding: 10px;
+  font-size: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.buttons, .images {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.button {
+  margin: 0 10vw
 }
 
-@keyframes App-logo-spin {
+.button > input {
+  display: none;
+}
+
+.button svg, .delete svg {
+  filter: drop-shadow(3px 3px 3px #999);
+  transition: 0.3s;
+  transform: rotate(-0.2deg)
+}
+
+.button:hover svg, .delete:hover svg {
+  cursor: pointer;
+  transform: rotate(-20deg);
+}
+
+.images {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  align-items: flex-start;
+}
+
+.image {
+  margin: 10px;
+}
+
+.delete {
+  position: relative;
+  top: 16px;
+  right: 15px
+}
+
+img {
+  width: 100%;
+  padding: 10px;
+  border: 1px dashed darkgrey;
+}
+
+.spinner {
+  text-align: center;
+  height: 50vh;
+}
+
+.fadein {
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
 }
